@@ -1,6 +1,16 @@
+logs
 *.log
 results
+lib-cov
+coverage
 npm-debug.log
 node_modules
 node_modules?
 public/dist/*.min.js
+.lock-wscript
+pids
+*.pid
+*.seed
+.grunt
+build/Release
+.lock-wscript
