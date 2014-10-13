@@ -16,12 +16,10 @@
     </div>
 
     <div ng-controller="MyCtrl">
-        <span ng-repeat="cObj in cObjs">
-          <div style="width:150px; height:100px;float:left; border :1px solid red; margin : 20px">
+          <div ng-repeat="cObj in cObjs" style="width:250px; height:100px;float:left; border :1px solid red; margin : 20px">
             <img ng-src="img/oracle-cloud.png" style="width:50px; height:50px; margin-left:30%"/>
             {{cObj}}
           <div>
-        </span>
     </div>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.8/angular.js"></script>
