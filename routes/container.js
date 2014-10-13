@@ -9,8 +9,16 @@ router.get('/', function(req, res) {
 });
 
 router.get('/add', function(req, res) {
-  app.io.emit('container:add', {id:2,name:'sample container' })
-  res.send('chumma')
+  var cObjs = app.getCloudObjs()
+  console.log(cObjs)
+  var len = cObjs.length + 1
+  var obj = {id : len, name : 'Cloud Obj'+ len }
+  app.addCloudObjs(obj)
+  console.log('added.')
+  console.log(obj)
+  console.log(app.getCloudObjs())
+  app.io.emit('container:add',obj)
+  res.send('Cloud container added: ' + obj.name)
 })
 
 module.exports = router;
