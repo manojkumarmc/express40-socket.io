@@ -11,6 +11,7 @@ var users = require('./routes/users');
 var container = require('./routes/container');
 
 var app = express();
+var cObjs = []
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -68,14 +69,24 @@ var server = http.createServer(app).listen(3000, function() {
 
 var io = require('socket.io').listen(server);
 io.sockets.on('connection', function (socket) {
-      console.log('in here')
-      socket.emit('container:add', {id : 1, name: 'something' });
+      console.log('Web socket connection succeded.')
+//      socket.emit('container:add', {id : 1, name: 'something' });
 //  socket.on('my other event', function (data) {
 //    console.log(data);
 //  });
   exports.io = io;
 });
 
+var getCloudObjs = function() {
+  return cObjs;
+}
 
+var addCloudObjs = function(cData) {
+  cObjs.push(cData)
+}
+
+
+exports.getCloudObjs = getCloudObjs
+exports.addCloudObjs = addCloudObjs
 exports.app = app;
 //module.exports = app;
