@@ -1,5 +1,5 @@
 {
-  "name": "express40-socket.io",
+  "name": "app",
   "version": "0.0.0",
   "private": true,
   "scripts": {
